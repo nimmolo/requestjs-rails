@@ -5,13 +5,5 @@ module Requestjs
         Rails.application.config.assets.precompile += %w( requestjs.js )
       end
     end
-
-    initializer "requestjs.importmap" do
-      if Rails.application.respond_to?(:importmap)
-        Rails.application.importmap.draw do
-          pin "@rails/requestjs", to: "requestjs.js"
-        end
-      end
-    end
   end
 end
